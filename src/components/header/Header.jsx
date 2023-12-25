@@ -1,8 +1,9 @@
 import React from 'react';
+import './header-styles.css';
 
 const Header = () => {
   return (
-    <h1>Monsters Rolodex</h1>
+    <h1 className='app-title'>Monsters Rolodex</h1>
   )
 }
 

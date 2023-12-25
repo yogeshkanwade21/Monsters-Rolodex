@@ -1,5 +1,6 @@
 import {React, useState, useEffect} from 'react';
-import Cardlist from './card list/card-list';
+import Cardlist from '../card list/card-list';
+import SearchBar from '../search box/search-bar';
 
 const Body = () => {
     const [monsters, setMonsters] = useState([]);
@@ -36,23 +37,12 @@ const Body = () => {
 
   return (
     <>
-        <div className='search-container'>
-            <input
-                type='search'
-                className='searchBox'
-                placeholder="Search Monsters"
-                value={searchString}
-                onChange={handleSearchChange}
-            />
-        </div>
+        <SearchBar
+            className='monsters-search-box'
+            placeholder='Search Monsters...'
+            onChangeHandler={handleSearchChange}
+        />
         <Cardlist monsterList={filteredMonsters}/>
-        {/* {filteredMonsters.map((monster) => {
-            return (
-                <div key={monster.id}>
-                    <h2>{monster.name}</h2>
-                </div>
-            );
-        })} */}
     </>
   )
 }
